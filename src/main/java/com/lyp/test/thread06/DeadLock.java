@@ -14,7 +14,8 @@ public class DeadLock implements Runnable{
 	public void setTag(String tag){
 		this.tag = tag;
 	}
-	
+
+	@Override
 	public void run() {
 		if(tag.equals("a")){
 			synchronized (lock1) {

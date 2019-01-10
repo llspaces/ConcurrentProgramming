@@ -47,16 +47,19 @@ public class ObjectLock {
 
         final ObjectLock objLock = new ObjectLock();
         Thread t1 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 objLock.method1();
             }
         });
         Thread t2 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 objLock.method2();
             }
         });
         Thread t3 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 objLock.method3();
             }

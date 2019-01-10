@@ -24,11 +24,13 @@ public class StringLock {
 	public static void main(String[] args) {
 		final StringLock stringLock = new StringLock();
 		Thread t1 = new Thread(new Runnable() {
+			@Override
 			public void run() {
 				stringLock.method();
 			}
 		},"t1");
 		Thread t2 = new Thread(new Runnable() {
+			@Override
 			public void run() {
 				stringLock.method();
 			}

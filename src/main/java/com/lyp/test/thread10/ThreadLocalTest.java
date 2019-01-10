@@ -26,6 +26,7 @@ public class ThreadLocalTest {
         final ThreadLocalTest threadLocalTest = new ThreadLocalTest();
 
         Thread t1 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 threadLocalTest.setValue("张三");
                 System.out.println(threadLocalTest.getValue());
@@ -33,6 +34,7 @@ public class ThreadLocalTest {
         }, "t1");
 
         Thread t2 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 try {
                     TimeUnit.MILLISECONDS.sleep(100);

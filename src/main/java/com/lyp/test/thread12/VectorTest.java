@@ -34,6 +34,7 @@ public class VectorTest {
     public static void test2(final Vector<String> vector){
         for (int i = 1 ; i <= 10; i++){
             new Thread(new Runnable() {
+                @Override
                 public void run() {
                     while(!vector.isEmpty()){
                         System.out.println(Thread.currentThread().getName() + "---" + vector.remove(0));

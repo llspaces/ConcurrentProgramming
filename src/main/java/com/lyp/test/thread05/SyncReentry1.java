@@ -29,6 +29,7 @@ public class SyncReentry1 {
         final SyncReentry1 sr1 = new SyncReentry1();
 
         Thread t1 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 sr1.m1();
             }

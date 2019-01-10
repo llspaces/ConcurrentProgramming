@@ -33,6 +33,7 @@ public class DirtyRead {
     public static void main(String[] args) {
         final DirtyRead dr = new DirtyRead();
         Thread t1 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 dr.setValue("lvlp", "654321");
             }

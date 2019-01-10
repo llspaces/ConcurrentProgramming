@@ -25,11 +25,13 @@ public class ChangeLock {
 	
 		final ChangeLock changeLock = new ChangeLock();
 		Thread t1 = new Thread(new Runnable() {
+			@Override
 			public void run() {
 				changeLock.method();
 			}
 		},"t1");
 		Thread t2 = new Thread(new Runnable() {
+			@Override
 			public void run() {
 				changeLock.method();
 			}

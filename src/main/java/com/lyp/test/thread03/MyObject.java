@@ -34,12 +34,14 @@ public class MyObject {
          * t1线程先持有object对象的Lock锁，t2线程如果在这个时候调用对象中的同步（synchronized）方法则需等待，也就是同步
          */
         Thread t1 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 mo.method1();
             }
         },"t1");
 
         Thread t2 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 mo.method2();
             }

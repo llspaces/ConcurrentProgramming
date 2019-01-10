@@ -38,6 +38,7 @@ public class WaitAndNotify {
         final WaitAndNotify waitAndNotify = new WaitAndNotify();
 
         Thread t1 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 for (int i = 0;i < 10; i ++){
                     waitAndNotify.add();
@@ -52,6 +53,7 @@ public class WaitAndNotify {
         },"t1");
 
         Thread t2 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 while(true){
                     if(waitAndNotify.size() == 5){
@@ -75,6 +77,7 @@ public class WaitAndNotify {
         final Object lock = new Object();
 
         Thread t1 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 synchronized (lock) {
                     for (int i = 0; i < 10; i++) {
@@ -95,6 +98,7 @@ public class WaitAndNotify {
         },"t1");
 
         Thread t2 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 synchronized (lock) {
                     if (waitAndNotify.size() != 5) {
@@ -123,6 +127,7 @@ public class WaitAndNotify {
         final CountDownLatch countDownLatch = new CountDownLatch(1);
 
         Thread t1 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 for (int i = 0; i < 10; i++) {
                     waitAndNotify.add();
@@ -142,6 +147,7 @@ public class WaitAndNotify {
         },"t1");
 
         Thread t2 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 if (waitAndNotify.size() != 5) {
                     try {

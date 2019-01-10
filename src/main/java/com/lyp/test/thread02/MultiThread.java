@@ -40,6 +40,7 @@ public class MultiThread {
         final MultiThread m1 = new MultiThread();
         final MultiThread m2 = new MultiThread();
         Thread t1 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 try {
                     m1.print("a");
@@ -49,6 +50,7 @@ public class MultiThread {
             }
         });
         Thread t2 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 try {
                     m2.print("b");

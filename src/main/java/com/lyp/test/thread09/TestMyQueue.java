@@ -25,6 +25,7 @@ public class TestMyQueue {
         System.out.println("当前queue长度为：" + myQueue.size());
         System.out.println("------------------------------");
         Thread t1 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 myQueue.put("f");
                 myQueue.put("g");
@@ -33,6 +34,7 @@ public class TestMyQueue {
         t1.start();
 
         Thread t2 = new Thread(new Runnable() {
+            @Override
             public void run() {
                 myQueue.take();
                 try {
